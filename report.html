@@ -11849,22 +11849,22 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">minimum_price</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">])</span> <span class="c1">#data[&quot;MEDV&quot;].min()</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">])</span> <span class="c1">#data[&quot;MEDV&quot;].max()</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">])</span> <span class="c1">#data[&quot;MEDV&quot;].mean()</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">])</span> <span class="c1"># data[&quot;MEDV&quot;].median()</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;MEDV&quot;</span><span class="p">])</span> <span class="c1">#data[&quot;MEDV&quot;].std()</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11891,7 +11891,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -13784,7 +13784,7 @@ KaWUUkoppZRSSimllFJKKaWUUsr4f7FVELNvyZb3AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -13804,13 +13804,13 @@ KaWUUkoppZRSSimllFJKKaWUUsr4f7FVELNvyZb3AAAAAElFTkSuQmCC
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
 
     <span class="c1"># Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
 
-    <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
+    <span class="c1"># Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
 
-    <span class="c1"># TODO: Create the grid search object</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span><span class="n">params</span><span class="p">)</span>
+    <span class="c1"># Create the grid search object</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span><span class="n">params</span><span class="p">,</span><span class="n">scoring</span><span class="o">=</span><span class="n">scoring_fnc</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="n">cv_sets</span><span class="p">)</span>
 
     <span class="c1"># Fit the grid search object to the data to compute the optimal model</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -13847,7 +13847,7 @@ KaWUUkoppZRSSimllFJKKaWUUsr4f7FVELNvyZb3AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -13929,7 +13929,7 @@ KaWUUkoppZRSSimllFJKKaWUUsr4f7FVELNvyZb3AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -13972,6 +13972,8 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 <p>Suggested selling price for Client 1's home: $391,183.33</p>
 <p>Suggested selling price for Client 2's home: $189,123.53</p>
 <p>Suggested selling price for Client 3's home: $942,666.67</p>
+<p>Thes prices seem reasonable with the assumptions we made earlier in the Data Exploration portion of the project.
+the house with the most rooms, the least amount of poverty, and the lowest student to teacher ratio was by far the highest predicted selling price. The house with the lowest number of rooms, the most poverty, and the highest student to teacher ratio was by far the lowest predicted selling price.</p>
 
 </div>
 </div>
@@ -13988,7 +13990,7 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">PredictTrials</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">fit_model</span><span class="p">,</span> <span class="n">client_data</span><span class="p">)</span>
@@ -14004,18 +14006,18 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Trial 1: $411,000.00
-Trial 2: $411,417.39
+<pre>Trial 1: $391,183.33
+Trial 2: $424,935.00
 Trial 3: $415,800.00
-Trial 4: $428,316.00
-Trial 5: $413,334.78
-Trial 6: $422,223.53
+Trial 4: $420,622.22
+Trial 5: $418,377.27
+Trial 6: $411,931.58
 Trial 7: $399,663.16
 Trial 8: $407,232.00
-Trial 9: $402,531.82
+Trial 9: $351,577.61
 Trial 10: $413,700.00
 
-Range in prices: $28,652.84
+Range in prices: $73,357.39
 </pre>
 </div>
 </div>
@@ -14047,7 +14049,7 @@ Range in prices: $28,652.84
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>I don't think the constructed model should be used in a real-world setting as it stands now. The data we used is very stale. Even if the data we had fully described the housing market in 1978 it still would have questionable application to the market now. which segues into the other major problem with our constructed model. The features we have certainly have predictive power but we are leaving out some pretty important variables such as the square footage, price per square footage of surrounding  houses, garage space and yard size to name a few. Not taking into account these variables could lead to the sensitivy problem we have in this model. Depending on the training and testing split we see a range in prices up to $28,000. This would be unacceptable in real world use. So now if you had built a model that addressed the above issues but you still only used data from Boston, it would only be really useful for houses in Boston. Median home prices range drastically across the United States even with similar features. This has a lot to do with location demand and can't be addressed with only sampling in one housing market.</p>
+<p>I don't think the constructed model should be used in a real-world setting as it stands now. The data we used is very stale. Even if the data we had fully described the housing market in 1978 it still would have questionable application to the market now. which segues into the other major problem with our constructed model. The features we have certainly have predictive power but we are leaving out some pretty important variables such as the square footage, price per square footage of surrounding  houses, garage space and yard size to name a few. Not taking into account these variables could lead to the sensitivy problem we have in this model. Depending on the training and testing split we see a range in prices up to $70,000. This would be unacceptable in real world use. So now if you had built a model that addressed the above issues but you still only used data from Boston, it would only be really useful for houses in Boston. Median home prices range drastically across the United States even with similar features. This has a lot to do with location demand and can't be addressed with only sampling in one housing market.</p>
 
 </div>
 </div>
